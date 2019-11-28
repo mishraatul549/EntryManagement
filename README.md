@@ -14,7 +14,7 @@ URL and pages :
 	4. Admin panel - http://127.0.0.1:8000/admin 
 	
 Logic Used:
-1. The mainpage consist of button "checkIn" and "checkout"  which upon click leads to checkin and checkout page respectively.
+A. The mainpage consist of button "checkIn" and "checkout"  which upon click leads to checkin and checkout page respectively.
 	
 CheckIn Logic :
 
@@ -33,9 +33,9 @@ Two cases arises:
 
 2. No object is found,in that case user is not checkedIn . So we send user back to the checkout page with error message like "user       didn't checked". 
 	
-2. Also there is an admin panel from where the admin of the organization can make changes to the databsae 
+B. Also there is an admin panel from where the admin of the organization can make changes to the databsae 
 when required.It requires userId and password to have access to it.
 	
-3. I haven't provide the priavte details like credential of sms and email services.
+C. I haven't provide the priavte details like credential of sms and email services.
 The whole project is fully commented for better understanding.
 	   
