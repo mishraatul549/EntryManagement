@@ -1,6 +1,6 @@
 # EntryManagement
 This is an entry management software made which keeps track of the visitor information in an organisation.
-Whenever a persn visit the organization and enter his and his host detail , it trigger a mail and sms to host .
+Whenever a person visit the organization and enter his and his host detail , it trigger a mail and sms to host .
 When he leaves, an email and sms is send to the visitor.
 
 Technology Used : 
@@ -14,7 +14,7 @@ URL and pages :
 	4. Admin panel - http://127.0.0.1:8000/admin 
 	
 Logic Used:
-A. The mainpage consist of button "checkIn" and "checkout"  which upon click leads to checkin and checkout page respectively.
+A. The mainpage consist of two buttons "checkIn" and "checkout"  which upon click leads to checkin and checkout page respectively.
 	
 CheckIn Logic :
 
@@ -22,7 +22,7 @@ for checkIn ,the User is provided with form which consist of details of host and
 1. we first check if the user is already checkIn and had not checkOut yet.
 In that case, we redirect userto checkIn page with appropriate message like "You are already checkedIn".
 
-2. If user is not checkedIn, we sent mai and sms to the user. If it is successful then,we create object of "MEETING " database            model .The Meeting model consist of all detail and one more boolean field "isCheckOut" which is set to False .This Field is              used for checkout alongwith visitor's emailId.When user checkout this Filed is set to True. After that we redirect it to the             mainpage with success message . For this ,session is created.		
+2. If user is not checkedIn, we sent mai and sms to the user. If it is successful then,we create object of "MEETING " database            model .The Meeting model consist of all detail and one more boolean field "isCheckOut" which is set to False .This Field is              used for checkout alongwith visitor's emailId.When user checkout this Filed is set to True. After checkIn  we redirect it to the             mainpage with success message . For this ,session is created.		
 	
 CheckOut Logic :
 for checkout,we asked visitor for checkIn email Id . we make use of isCheckOut field of Meeting Model.
