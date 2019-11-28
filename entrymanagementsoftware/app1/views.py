@@ -8,6 +8,7 @@ import requests
 import json
 from app1.models import *
 
+
 def mainpageshow(req):
     #checking if checkout session exist or not
     try:
@@ -85,8 +86,9 @@ def checkout(req):
             a.save()
             
             #sending email to guest on check-out
+            address = "221B Baker Street London"
             subject = 'Summary of your Visit'
-            message = "Detail of visit :\nName - " +a.guestname + "\nPhone -" + a.guestmobileNo + "\nCheck-in Time - "+ a.checkInTime + "\nCheck-out time - "+a.checkOutTime+"\nHostname - "+a.hostname+"\nAddress - "+str("address")
+            message = "Detail of visit :\nName - " +a.guestname + "\nPhone -" + a.guestmobileNo + "\nCheck-in Time - "+ a.checkInTime + "\nCheck-out time - "+a.checkOutTime+"\nHostname - "+a.hostname+"\nAddress - "+address
             from_email = settings.EMAIL_HOST_USER
             to_list = [str(a.guestemail),]
             send_mail(subject,message,from_email,to_list,fail_silently=False)
