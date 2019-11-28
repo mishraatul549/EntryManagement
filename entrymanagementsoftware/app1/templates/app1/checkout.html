@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <title>Checkkout</title>
+</head>
+<body>
+    <div class="ui container">
+            <div class="ui clearing segment">
+                    <a class="ui right floated header" href="http://127.0.0.1:8000/checkin">
+                        Checkin
+                    </a>
+                    <a class="ui left floated header" href="http://127.0.0.1:8000/">
+                       Mainpage
+                    </a>
+            </div>
+            <h1>Checkout</h1>
+            <br/><br/>
+            <!-- Rendering error message on screen when someone who doesn't checkedIn tries to checkout -->
+            {%if error %}
+                <div class="ui warning message">
+                    <div class="header">
+                    {{error}}
+                    </div>
+                </div>
+            {%endif%}
+            <!-- rendering error end -->
+               
+                <form class="ui form" method="POST">
+                    {%csrf_token%}
+                    <div class="ui field">
+                        <label>Enter the Checkin Email-id for Checkout</label>
+                        <input type="email" placeholder="abc@gmail.com" name="email" />
+                    </div>
+                    <input type="submit" class="ui button "/>
+                </form>
+            
+            
+    </div>
+   
+    
+</body>
+</html>

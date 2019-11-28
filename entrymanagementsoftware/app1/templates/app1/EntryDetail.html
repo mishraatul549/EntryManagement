@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <title>Entry Details for Guest</title>
+</head>
+<body>
+    <div class="ui container">
+        <div class="ui clearing segment">
+            <a class="ui right floated header" href="http://127.0.0.1:8000/checkout">
+                Checkout
+            </a>
+            <a class="ui left floated header" href="http://127.0.0.1:8000/">
+               Mainpage
+            </a>
+        </div>
+        <h2 class="ui center floated">welcome to Entry Management System</h2>
+        
+        <div class="ui segment">
+            <!-- Rendering error on screen when someone who is already checkin tries to checkedin again or wrong credentials are entered -->
+            {%if error%}
+                <div class="ui warning message">
+                    <div class="header">
+                    {{error}}
+                    </div>
+                </div>
+            {%endif%}
+            <!-- rendering error end -->
+
+            <!-- Entry form -->
+            <form class="ui form error" method="POST">
+                {%csrf_token%}
+                <h3>Enter Your Detail</h3><br/>
+                <div class="two fields">
+                    <div class="field">    
+                        <label>Your Name</label>
+                        <input type="text" placeholder="Sam billing" name="guestName" minlength="1" maxlength="30"/>
+                    </div>
+                    <div class="field">    
+                            <label>Email</label>
+                            <input type="Email" placeholder="abc@gmail.com" name="guestEmail" minlength="3" maxlength="30"/>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">    
+                            <label>Mobile No</label>
+                            <input type="number" placeholder="9999999999" name="guestMobileNo" minlength="10" maxlength="10"/>
+                    </div>
+                    
+                </div>
+
+                <h2>Enter Host Detail</h2>
+                <div class="two fields">
+                        <div class="field">    
+                            <label>Host's Name</label>
+                            <input type="text" placeholder="Sam billing" name="hostName" minlength="1" maxlength="30"/>
+                        </div>
+                        <div class="field">    
+                                <label>Host's Email</label>
+                                <input type="Email" placeholder="abc@gmail.com" name="hostEmail" minlength="1" maxlength="30"/>
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">    
+                                <label>Host's Mobile No</label>
+                                <input type="number" placeholder="9999999999" name="hostMobileNo" minlength="10" maxlength="10"/>
+                        </div>
+                    </div>
+                <button class="ui primary button">Submit</button>
+            </form>
+            <!-- form end -->
+
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>

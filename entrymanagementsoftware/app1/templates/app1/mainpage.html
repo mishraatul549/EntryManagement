@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" 
+    />
+    <title>Document</title>
+</head>
+<body style="background-color: #aebfbf;">
+    
+    <div class="ui container ">
+        <br/>
+        
+        <h2>Welcome to Entry Management System</h2><br/>
+
+        <!-- Rendering message on screen on successful checkin and checkout -->
+        {% if success %}
+            <div className="ui error message">
+                <div className="header">{{success}}</div>
+            </div>
+        {%endif%}
+        <!-- Rendering success end -->
+        
+        <div>
+            <a class="ui button massive red" href="http://127.0.0.1:8000/checkin">Checkin</a>
+            <a class="ui button massive red" href="http://127.0.0.1:8000/checkout">Checkout</a>
+        </div>
+    </div>
+</body>
+</html>
